@@ -1,0 +1,34 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int[] arr = new int[]{2,3,4,5,6,7,8,1};
+		int low = 0;
+		int high = arr.length-1;
+		Ideone id = new Ideone();
+		id.Search(low,high,arr);
+	}
+
+	void Search(int low, int high, int[] arr)
+	{
+		int mid = low + (high - low)/2;
+		if(arr[mid -1] > arr[mid])
+		{
+			System.out.println(arr[mid]);
+			return;
+		}
+		else if(arr[mid] < arr[1])
+		{
+			Search(low, mid-1, arr);
+		}
+		else
+			Search(mid+1, high, arr);
+	}
+}
