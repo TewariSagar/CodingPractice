@@ -1,0 +1,30 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int[] boy = new int[]{10,20,11,89,34,32};
+		Integer[] girl = new Integer[]{12,30,11,20};
+		ArrayList<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(girl));
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		Collections.sort(arrayList);
+		Integer[] girlarray = new Integer[arrayList.size()];
+		girlarray = arrayList.toArray(girlarray);
+		for(int i = 0; i < boy.length; i++)
+		{
+			int retVal = Arrays.binarySearch(girlarray, boy[i]);
+			//System.out.println("DEBUG retVal: "+retVal);
+			if(retVal > -1)
+			{//System.out.println(retVal + " " + i);
+			a.add(boy[i]);}
+		}
+		System.out.println(a);
+
+	}
+}
